@@ -1,0 +1,45 @@
+group 'com.byf.app'
+version '1.0'
+
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.8
+
+buildscript {
+    ext.kotlin_version = '1.3.11'
+    ext.spark_version = '1.0.0-alpha'
+    ext.slf4j_version = '1.7.12'
+    ext.kmongo_version = '3.9.0'
+    ext.gson_version = '2.2.4'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compile "com.sparkjava:spark-kotlin:$spark_version"
+    compile "org.slf4j:slf4j-simple:$slf4j_version"
+    compile "org.litote.kmongo:kmongo:$kmongo_version"
+    compile "com.google.code.gson:gson:$gson_version"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+task copyToLib(type: Copy) {
+    into "$buildDir/libs"
+    from(configurations.compile)
+}
+
+task stage(dependsOn: ['clean', 'build', 'copyToLib'])
+build.mustRunAfter clean
