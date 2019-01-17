@@ -1,4 +1,18 @@
-# Back-your-future
+# Back your future
+
+## Want a backend for your side projects? Try this backend in Kotlin using [Spark](http://sparkjava.com/) and [KMongo](https://litote.org/kmongo/).
+
+Platforms:
+
+- [Heroku](https://www.heroku.com/)
+- [mLab](https://mlab.com/)
+
+Dependencies:
+
+- [Spark](http://sparkjava.com/)
+- [KMongo](https://litote.org/kmongo/)
+- [SLF4J](https://www.slf4j.org/)
+- [Gson](https://github.com/google/gson)
 
 For the database, create one on [mLab](https://mlab.com/) and set the keys into `MongoDb.kt`:  
 
