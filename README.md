@@ -1,6 +1,6 @@
 # Back your future
 
-## Want a backend for your side projects? Try this backend in Kotlin using [Spark](http://sparkjava.com/) and [KMongo](https://litote.org/kmongo/).
+## Want a backend for your projects? Try this in Kotlin with [Spark](http://sparkjava.com/) and [KMongo](https://litote.org/kmongo/).
 
 Platforms:
 
