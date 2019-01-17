@@ -1,7 +1,7 @@
 package app
 
 import app.api.ApiController
-import spark.kotlin.port
+import spark.Spark.port
 
 object Main {
 
