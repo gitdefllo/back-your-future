@@ -3,7 +3,7 @@ package app.api.route
 import app.api.dao.BaseDao
 import spark.Spark
 
-open class BaseRoute<T: Any>(private val dao: BaseDao<T>) {
+open class BaseRoute<T: BaseDao<R>, R: Any>(protected val dao: T) {
 
     fun getRoutes() {
         Spark.get("") { _, _ -> dao.getAll() }
