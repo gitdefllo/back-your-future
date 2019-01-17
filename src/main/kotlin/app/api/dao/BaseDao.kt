@@ -41,16 +41,6 @@ open class BaseDao<T: Any> {
         false
     }
 
-    private fun getCollection(): MongoCollection<T> =
-        getDaoEntityClass().let { k ->
-            MongoDb.getDatabase().getCollection(
-                KMongoUtil.defaultCollectionName(k), k.java)
-        }
-
-    @Suppress("UNCHECKED_CAST")
-    private fun getDaoEntityClass(): KClass<T>
-            = ((this::class.java.genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<T>).kotlin
-
     private fun Any?.toJson() = toGson(this)
 
     private fun <R> toGson(r: R): String = GsonBuilder().setPrettyPrinting().create().toJson(r)
@@ -58,4 +48,14 @@ open class BaseDao<T: Any> {
     private fun String?.toEntity(): T = Gson().fromJson(this)
 
     private fun Gson.fromJson(json: String?): T = this.fromJson<T>(json, object : TypeToken<T>() {}.type)
+
+    private fun getCollection(): MongoCollection<T> =
+            getDaoEntityClass().let { k ->
+                MongoDb.getDatabase().getCollection(
+                        KMongoUtil.defaultCollectionName(k), k.java)
+            }
+
+    @Suppress("UNCHECKED_CAST")
+    private fun getDaoEntityClass(): KClass<T>
+            = ((this::class.java.genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<T>).kotlin
 }
