@@ -1,6 +1,6 @@
 package app.api.route
 
 import app.api.dao.CarDao
-import app.api.entity.CarEntity
+import app.api.model.CarModel
 
-class CarRoute : BaseRoute<CarDao, CarEntity>(CarDao())
+class CarRoute : BaseRoute<CarDao, CarModel>(CarDao())

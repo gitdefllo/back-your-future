@@ -41,15 +41,15 @@ open class BaseDao<T: Any> {
         false
     }
 
-    private fun Any?.toJson() = toGson(this)
+    protected fun Any?.toJson() = toGson(this)
 
     private fun <R> toGson(r: R): String = GsonBuilder().setPrettyPrinting().create().toJson(r)
 
-    private fun String?.toEntity(): T = Gson().fromJson(this)
+    protected fun String?.toEntity(): T = Gson().fromJson(this)
 
     private fun Gson.fromJson(json: String?): T = this.fromJson<T>(json, object : TypeToken<T>() {}.type)
 
-    private fun getCollection(): MongoCollection<T> =
+    protected fun getCollection(): MongoCollection<T> =
             getDaoEntityClass().let { k ->
                 MongoDb.getDatabase().getCollection(
                         KMongoUtil.defaultCollectionName(k), k.java)

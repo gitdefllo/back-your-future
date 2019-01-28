@@ -10,9 +10,6 @@ class ApiController {
         const val RES_TYPE_JSON = "application/json"
     }
 
-    private val pilotRoute = PilotRoute()
-    private val carRoute = CarRoute()
-
     init {
         get("/") { _, _ -> renderWelcome() }
 
@@ -41,8 +38,8 @@ class ApiController {
     }
 
     private fun setPaths() {
-        path("/pilots") { pilotRoute.getRoutes() }
-        path("/cars") { carRoute.getRoutes() }
+        path("/pilots") { PilotRoute().getRoutes() }
+        path("/cars") { CarRoute().getRoutes() }
     }
 
     private fun setErrors() {

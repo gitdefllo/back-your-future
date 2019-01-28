@@ -1,5 +1,5 @@
 package app.api.dao
 
-import app.api.entity.CarEntity
+import app.api.model.CarModel
 
-class CarDao : BaseDao<CarEntity>()
+class CarDao : BaseDao<CarModel>()
