@@ -1,4 +1,4 @@
-package app.api.entity
+package app.api.model
 
 data class PilotModel(val _id: String,
                       val name: String?,
