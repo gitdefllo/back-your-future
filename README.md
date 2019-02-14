@@ -52,7 +52,7 @@ fun get(id: String): String = getCollection().findOneById(ObjectId(id)).toJson()
 
 ### Use [Postman](https://www.getpostman.com/) or [Insomnia](https://insomnia.rest/) to test the API
 
-### :boom: 88m/h reached! 
+### Tadaa! :boom: 88m/h reached! 
 
 <p align="center">
   <img src="https://media.giphy.com/media/xsF1FSDbjguis/giphy.gif" width="360" />
