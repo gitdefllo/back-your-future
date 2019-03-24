@@ -81,6 +81,3 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
 }
 ```
-------
-
-### Feel free to fork, use or contribute
