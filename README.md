@@ -1,6 +1,6 @@
 # Back your future
 
-## A CRUD REST API with [Heroku](https://www.heroku.com/) and [Spark](http://sparkjava.com/), and a free database with [mLab](https://mlab.com/) and [KMongo](https://litote.org/kmongo/).
+## A CRUD REST API with [Heroku](https://www.heroku.com/) and [Spark](http://sparkjava.com/), and a free database with [mLab](https://mlab.com/) and [KMongo](https://litote.org/kmongo/)
 
 This repository is a use-case of the following steps:
 
@@ -52,7 +52,9 @@ fun get(id: String): String = getCollection().findOneById(ObjectId(id)).toJson()
 
 ### Use [Postman](https://www.getpostman.com/) or [Insomnia](https://insomnia.rest/) to test the API
 
-### Tadaa! :boom: 88m/h reached! 
+------
+
+### :boom: 88m/h reached! 
 
 <p align="center">
   <img src="https://media.giphy.com/media/xsF1FSDbjguis/giphy.gif" width="360" />
@@ -68,7 +70,7 @@ fun get(id: String): String = getCollection().findOneById(ObjectId(id)).toJson()
 
 ------
 
-### Dependencies:
+### Dependencies used:
 
 ```java
 dependencies {
@@ -79,3 +81,6 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
 }
 ```
+------
+
+### Feel free to fork, use or contribute
